@@ -1,0 +1,9 @@
+{
+  "eyebrow": "VOL. 18 / N° 04 — KURUMSAL FİNANS",
+  "titleLines": ["Herkes kendi", "geleceğinin", "mimarıdır."],
+  "accentLastLine": true,
+  "paragraph": "Geleceğimizi güvenli bir şekilde inşa etmek amacıyla, hızla değişen ve gelişen iş dünyasının dinamiklerinde işletmelerimiz için daha zor sorulara bugünden cevaplar arıyoruz.",
+  "image": "/uploads/hero.jpg",
+  "primaryCta": { "label": "Görüşme Planla", "href": "#contact" },
+  "secondaryCta": { "label": "Hizmetlere Git", "href": "#services" }
+}

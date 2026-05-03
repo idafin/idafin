@@ -1,0 +1,28 @@
+---
+import about from "../../data/about.json";
+---
+
+<section id="about" class="bg-paper-alt border-b border-ink py-20 md:py-30">
+  <div class="container-site grid-12 gap-y-10">
+    <div class="col-span-12 md:col-span-2">
+      <div class="text-mono-cap text-ink-muted">{about.number}</div>
+      <div class="mt-3 text-mono-cap text-ink">{about.eyebrow}</div>
+    </div>
+    <div class="col-span-12 md:col-span-6">
+      <h2 class="text-display m-0 text-ink">{about.title}</h2>
+    </div>
+    <div class="col-span-12 md:col-span-4 md:self-end">
+      <p class="text-base leading-[1.6] text-ink-soft m-0">{about.paragraph}</p>
+      <div class="mt-8 grid grid-cols-2 gap-3">
+        {
+          about.values.map((v) => (
+            <div class="flex items-center gap-2 text-sm">
+              <span class="w-1.5 h-1.5 bg-accent inline-block" aria-hidden="true" />
+              {v}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

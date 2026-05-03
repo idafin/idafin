@@ -1,0 +1,45 @@
+{
+  "brand": "idafin",
+  "establishedLabel": "EST.2024",
+  "nav": [
+    { "n": "01", "label": "Hizmetler", "href": "#services" },
+    { "n": "02", "label": "Hakkımızda", "href": "#about" },
+    { "n": "03", "label": "İletişim", "href": "#contact" }
+  ],
+  "ctaPrimary": { "label": "Görüşme Planla →", "href": "#contact" },
+  "contact": {
+    "email": "iletisim@idafin.com",
+    "address": "Hacı İlbey, Anafartalar Cd. 48/2, 10010 Altıeylül/Balıkesir"
+  },
+  "footer": {
+    "tagline": "2024'ten bu yana finansal mimarlık. İşletmelerin geleceğini bugünden kuran düşünce ortağınız.",
+    "columns": [
+      {
+        "title": "Hizmetler",
+        "links": [
+          { "label": "Finansal Danışmanlık", "href": "#services" },
+          { "label": "Yazılım & Dijital", "href": "#services" },
+          { "label": "Süreç & Org.", "href": "#services" }
+        ]
+      },
+      {
+        "title": "Şirket",
+        "links": [
+          { "label": "Hakkımızda", "href": "#about" },
+          { "label": "Ekip", "href": "#" },
+          { "label": "Kariyer", "href": "#" }
+        ]
+      },
+      {
+        "title": "İletişim",
+        "links": [
+          { "label": "iletisim@idafin.com", "href": "mailto:iletisim@idafin.com" },
+          { "label": "Hacı İlbey, Anafartalar Cd. 48/2, Altıeylül/Balıkesir", "href": "#contact" }
+        ]
+      }
+    ],
+    "legal": "© 2026 İdafin Finansal Danışmanlık & Yazılım Hizmetleri Ltd Şti. Tüm hakları saklıdır.",
+    "certifications": "ISO 27001 · KVKK · SPK",
+    "mark": ""
+  }
+}

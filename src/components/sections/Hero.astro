@@ -1,0 +1,64 @@
+---
+import hero from "../../data/hero.json";
+
+const lines = hero.titleLines;
+---
+
+<section
+  id="hero"
+  class="relative border-b border-ink py-20 md:pt-20 md:pb-15 overflow-hidden bg-paper"
+  style={`background-image: linear-gradient(180deg, rgba(220,230,255,0.82) 0%, rgba(180,200,255,0.55) 45%, rgba(0,40,140,0.55) 100%), url('${hero.image}'); background-size: cover; background-position: center;`}
+>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background-image: linear-gradient(90deg, rgba(10,10,10,0.06) 1px, transparent 1px); background-size: calc(100% / 12) 100%;"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative">
+    <div class="container-site grid-12">
+      <div class="col-span-12 md:col-span-11">
+        <h1 class="text-mega text-ink m-0" style="text-shadow: 0 1px 0 rgba(255,255,255,0.4);">
+          {lines[0]}<br />
+          {lines[1]}<br />
+          {
+            hero.accentLastLine ? (
+              <span class="text-accent">{lines[2]}</span>
+            ) : (
+              <span>{lines[2]}</span>
+            )
+          }
+        </h1>
+      </div>
+      <div class="hidden md:block col-span-1"></div>
+    </div>
+
+    <div class="container-site grid-12 mt-10 md:mt-20">
+      <div class="col-span-12 md:col-span-7">
+        <p
+          class="text-[18px] leading-[1.55] text-ink m-0 p-4 md:p-[18px]"
+          style="background: rgba(255,255,255,0.55); backdrop-filter: blur(2px);"
+          set:html={hero.paragraph.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-ink">$1</strong>')}
+        />
+      </div>
+      <div class="col-span-12 md:col-span-3 mt-6 md:mt-0">
+        <div class="flex flex-col gap-2">
+          <a
+            href={hero.primaryCta.href}
+            class="px-5 py-4 bg-accent text-paper no-underline text-[15px] font-semibold flex justify-between items-center hover:opacity-90 transition-opacity"
+          >
+            <span>{hero.primaryCta.label}</span><span>→</span>
+          </a>
+          <a
+            href={hero.secondaryCta.href}
+            class="px-5 py-4 bg-paper text-ink border border-ink no-underline text-[15px] font-semibold flex justify-between items-center hover:bg-ink hover:text-paper transition-colors"
+          >
+            <span>{hero.secondaryCta.label}</span><span>↓</span>
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:block col-span-2"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "eyebrow": "01 / MANİFESTO",
+  "titleLine1": "Sayılar yalan söylemez.",
+  "titleLine2": "Yorumlar söyler.",
+  "stats": [
+    { "value": 18, "suffix": "", "label": "YIL DENEYİM" },
+    { "value": 120, "suffix": "+", "label": "KURUMSAL MÜŞTERİ" },
+    { "value": 2.4, "suffix": "B₺", "label": "YÖNETİLEN HACİM" },
+    { "value": 96, "suffix": "%", "label": "DEVAMLILIK" }
+  ]
+}

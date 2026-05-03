@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+
+const services = (await getCollection("services")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="services" class="bg-paper border-b border-ink py-20 md:py-30">
+  <div class="container-site grid-12 gap-y-10">
+    <div class="col-span-12 md:col-span-2">
+      <div class="text-mono-cap text-ink-muted">01</div>
+      <div class="mt-3 text-mono-cap text-ink">HİZMETLER</div>
+    </div>
+    <div class="col-span-12 md:col-span-10">
+      <h2 class="text-display m-0 text-ink">
+        Üç sütun. Bir <span class="text-accent">ortak</span>.
+      </h2>
+      <p class="text-[17px] leading-[1.55] text-ink-soft mt-6 mb-12 md:mb-16 max-w-[640px]">
+        Müşteri odaklı yaklaşımımızla, her sektördeki firmalara özelleştirilmiş çözümlerle destek veriyoruz.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l border-ink">
+        {
+          services.map((s) => (
+            <article class="border-r border-b border-ink p-8 bg-paper-alt flex flex-col min-h-[460px]">
+              <div class="flex justify-between items-start mb-8">
+                <span class="font-mono text-[12px] tracking-[0.12em] text-ink-muted">
+                  {s.data.number}
+                </span>
+                <span class="w-3 h-3 bg-accent inline-block" aria-hidden="true" />
+              </div>
+              <h3 class="text-[26px] font-bold tracking-[-0.02em] text-ink m-0 mb-4">
+                {s.data.title}
+              </h3>
+              <p class="text-[15px] leading-[1.55] text-ink-soft m-0">{s.data.description}</p>
+              <div class="mt-auto pt-8 border-t border-line">
+                {s.data.bullets.map((b) => (
+                  <div class="text-sm text-ink py-1.5 flex justify-between border-b border-line">
+                    <span>{b}</span>
+                    <span class="text-ink-muted">—</span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

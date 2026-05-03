@@ -1,0 +1,54 @@
+---
+interface Props {
+  end: number;
+  suffix?: string;
+  duration?: number;
+}
+const { end, suffix = "", duration = 1400 } = Astro.props;
+---
+
+<span
+  class="counter"
+  data-end={end}
+  data-suffix={suffix}
+  data-duration={duration}
+>
+  {end < 10 ? end.toFixed(1) : end.toLocaleString("tr-TR")}{suffix}
+</span>
+
+<script>
+  const formatTR = (n: number, end: number) =>
+    end < 10 ? n.toFixed(1) : Math.floor(n).toLocaleString("tr-TR");
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll<HTMLElement>(".counter").forEach((el) => {
+    const end = parseFloat(el.dataset.end || "0");
+    const suffix = el.dataset.suffix || "";
+    const duration = parseInt(el.dataset.duration || "1400", 10);
+
+    if (reduce) {
+      el.textContent = formatTR(end, end) + suffix;
+      return;
+    }
+
+    let started = false;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          const t0 = performance.now();
+          const tick = (t: number) => {
+            const p = Math.min(1, (t - t0) / duration);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = formatTR(end * eased, end) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    obs.observe(el);
+  });
+</script>

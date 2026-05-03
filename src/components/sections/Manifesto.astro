@@ -1,0 +1,32 @@
+---
+import data from "../../data/manifesto.json";
+import Counter from "../ui/Counter.astro";
+---
+
+<section class="bg-paper-alt border-b border-ink py-20">
+  <div class="container-site grid-12 gap-y-10">
+    <div class="col-span-12 md:col-span-4">
+      <div class="text-mono-cap text-ink-muted">{data.eyebrow}</div>
+      <h2 class="text-display-sm m-0 mt-6 text-ink">
+        {data.titleLine1}<br />
+        <span class="text-accent">{data.titleLine2}</span>
+      </h2>
+    </div>
+    <div
+      class="col-span-12 md:col-span-8 grid grid-cols-2 lg:grid-cols-4 border-l border-t border-ink"
+    >
+      {
+        data.stats.map((s) => (
+          <div class="border-r border-b border-ink px-5 py-8">
+            <div class="text-stat text-ink">
+              <Counter end={s.value} suffix={s.suffix} />
+            </div>
+            <div class="mt-4 font-mono text-[11px] tracking-[0.12em] uppercase text-ink-muted">
+              {s.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

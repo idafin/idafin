@@ -1,0 +1,38 @@
+---
+import site from "../../data/site.json";
+---
+
+<header class="sticky top-0 z-50 bg-paper border-b border-ink">
+  <div class="container-site grid-12 items-center py-5">
+    <a href="#" class="col-span-6 md:col-span-3 flex items-center gap-3 text-ink no-underline">
+      <img
+        src="/uploads/idafin-logo.png"
+        alt={site.brand}
+        class="h-10 w-auto block"
+        width="180"
+        height="40"
+      />
+    </a>
+
+    <nav class="hidden lg:flex col-span-7 gap-8" aria-label="Ana menü">
+      {
+        site.nav.map((l) => (
+          <a
+            href={l.href}
+            class="inline-flex items-baseline gap-1.5 text-ink no-underline text-sm font-medium hover:text-accent transition-colors"
+          >
+            <span class="font-mono text-[10px] text-ink-muted">{l.n}</span>
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href={site.ctaPrimary.href}
+      class="hidden md:flex col-span-6 lg:col-span-2 justify-self-end items-center justify-center min-w-[180px] px-4 py-3 bg-ink text-paper no-underline text-sm font-semibold hover:bg-accent transition-colors"
+    >
+      {site.ctaPrimary.label}
+    </a>
+  </div>
+</header>

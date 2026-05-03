@@ -1,0 +1,49 @@
+---
+import site from "../../data/site.json";
+const f = site.footer;
+---
+
+<footer class="bg-ink text-paper py-20 pb-8">
+  <div class="container-site grid-12 gap-y-10">
+    <div
+      class="col-span-12 font-bold tracking-[-0.045em] mb-12"
+      style="font-size: clamp(80px, 16vw, 240px); line-height: 0.9;"
+    >
+      {site.brand}<span class="text-accent">.</span>
+    </div>
+    <div class="col-span-12 md:col-span-4">
+      <p class="text-[15px] leading-[1.55] text-paper/75 m-0 max-w-[320px]">{f.tagline}</p>
+    </div>
+    {
+      f.columns.map((col) => (
+        <div class="col-span-6 md:col-span-2">
+          <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-4">
+            {col.title.toUpperCase()}
+          </div>
+          {col.links.map((l) => (
+            <a
+              href={l.href}
+              class="block text-sm text-paper/85 no-underline py-1 hover:text-accent transition-colors"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+      ))
+    }
+    <div class="col-span-12 md:col-span-2 md:text-right">
+      <a
+        href="#hero"
+        class="text-[13px] font-semibold text-paper no-underline inline-flex items-center gap-1.5"
+        >↑ Başa dön</a
+      >
+    </div>
+    <div
+      class="col-span-12 border-t border-paper/15 mt-16 pt-6 grid grid-cols-1 md:grid-cols-3 font-mono text-[10px] tracking-[0.18em] uppercase text-paper/50 gap-y-2"
+    >
+      <span>{f.legal}</span>
+      <span class="md:text-center">{f.certifications}</span>
+      <span class="md:text-right">{f.mark}</span>
+    </div>
+  </div>
+</footer>

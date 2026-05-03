@@ -1,0 +1,104 @@
+---
+import contact from "../../data/contact.json";
+import site from "../../data/site.json";
+
+const rows: [string, string][] = [
+  ["E-posta", site.contact.email],
+  ["Adres", site.contact.address],
+];
+---
+
+<section id="contact" class="bg-paper border-b border-ink py-20 md:py-30">
+  <div class="container-site grid-12 gap-y-10">
+    <div class="col-span-12 md:col-span-2">
+      <div class="text-mono-cap text-ink-muted">{contact.number}</div>
+      <div class="mt-3 text-mono-cap text-ink">{contact.eyebrow}</div>
+    </div>
+    <div class="col-span-12 md:col-span-5">
+      <h2 class="text-display m-0 text-ink">{contact.title}</h2>
+      <p class="text-[17px] leading-[1.55] text-ink-soft mt-8 max-w-[460px]">
+        {contact.paragraph}
+      </p>
+      <div class="mt-12 grid gap-4">
+        {
+          rows.map(([k, v]) => (
+            <div class="grid grid-cols-[100px_1fr] gap-4 pb-3 border-b border-line">
+              <div class="font-mono text-[11px] tracking-[0.12em] uppercase text-ink-muted">
+                {k.toUpperCase()}
+              </div>
+              <div class="text-base font-semibold">{v}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <form id="contact-form" class="col-span-12 md:col-span-5 grid gap-4">
+      <label class="block border-b border-ink pb-2">
+        <span class="block font-mono text-[11px] tracking-[0.12em] uppercase text-ink-muted mb-2"
+          >AD SOYAD</span
+        >
+        <input
+          type="text"
+          name="name"
+          required
+          class="w-full py-1 border-0 bg-transparent text-[18px] text-ink outline-none"
+        />
+      </label>
+      <label class="block border-b border-ink pb-2">
+        <span class="block font-mono text-[11px] tracking-[0.12em] uppercase text-ink-muted mb-2"
+          >ŞİRKET</span
+        >
+        <input
+          type="text"
+          name="company"
+          class="w-full py-1 border-0 bg-transparent text-[18px] text-ink outline-none"
+        />
+      </label>
+      <label class="block border-b border-ink pb-2">
+        <span class="block font-mono text-[11px] tracking-[0.12em] uppercase text-ink-muted mb-2"
+          >E-POSTA</span
+        >
+        <input
+          type="email"
+          name="email"
+          required
+          class="w-full py-1 border-0 bg-transparent text-[18px] text-ink outline-none"
+        />
+      </label>
+      <label class="block border-b border-ink pb-2">
+        <span class="block font-mono text-[11px] tracking-[0.12em] uppercase text-ink-muted mb-2"
+          >MESAJ</span
+        >
+        <textarea
+          name="message"
+          rows="3"
+          class="w-full py-1 border-0 bg-transparent text-[18px] text-ink outline-none resize-y box-border"
+        ></textarea>
+      </label>
+      <button
+        type="submit"
+        class="mt-4 px-5 py-4 bg-accent text-paper border-0 text-base font-bold tracking-[-0.01em] cursor-pointer flex justify-between items-center hover:opacity-90 transition-opacity disabled:bg-paper-alt disabled:text-ink"
+      >
+        <span class="label">Mesaj Gönder</span><span>→</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector("button[type=submit]") as HTMLButtonElement;
+      const label = btn.querySelector(".label") as HTMLElement;
+      btn.disabled = true;
+      label.textContent = "Gönderiliyor…";
+      const data = Object.fromEntries(new FormData(form).entries());
+      console.log("contact form:", data);
+      // TODO: SMTP/SendGrid/Postmark entegrasyonu için bu noktada fetch et.
+      await new Promise((r) => setTimeout(r, 400));
+      label.textContent = "✓ Talebiniz alındı";
+    });
+  }
+</script>
