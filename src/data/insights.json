@@ -1,0 +1,23 @@
+[
+  {
+    "order": 1,
+    "date": "12.04.26",
+    "category": "STRATEJİ",
+    "title": "Yüksek faiz ortamında M&A: 2026 görünümü",
+    "readMinutes": 6
+  },
+  {
+    "order": 2,
+    "date": "04.04.26",
+    "category": "TEKNOLOJİ",
+    "title": "Finansal raporlamada AI ne kadar güvenilir?",
+    "readMinutes": 4
+  },
+  {
+    "order": 3,
+    "date": "21.03.26",
+    "category": "SEKTÖR",
+    "title": "Türkiye perakende pazarında dijital dönüşüm",
+    "readMinutes": 8
+  }
+]

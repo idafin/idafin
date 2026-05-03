@@ -1,0 +1,34 @@
+[
+  {
+    "order": 1,
+    "sector": "ÜRETİM",
+    "year": "2024",
+    "title": "Halka arz hazırlık süreci",
+    "metric": "+34%",
+    "metricLabel": "değerleme artışı"
+  },
+  {
+    "order": 2,
+    "sector": "PERAKENDE",
+    "year": "2025",
+    "title": "Borç yeniden yapılandırma",
+    "metric": "−42%",
+    "metricLabel": "finansman gideri"
+  },
+  {
+    "order": 3,
+    "sector": "TEKNOLOJİ",
+    "year": "2025",
+    "title": "Birleşme & devralma",
+    "metric": "4 ay",
+    "metricLabel": "kapanış süresi"
+  },
+  {
+    "order": 4,
+    "sector": "ENERJİ",
+    "year": "2026",
+    "title": "Sermaye artırımı stratejisi",
+    "metric": "+18%",
+    "metricLabel": "EBITDA katkısı"
+  }
+]

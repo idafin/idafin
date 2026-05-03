@@ -1,9 +1,7 @@
 ---
-import { getCollection } from "astro:content";
+import insightsData from "../../data/insights.json";
 
-const posts = (await getCollection("insights")).sort(
-  (a, b) => a.data.order - b.data.order
-);
+const posts = [...insightsData].sort((a, b) => a.order - b.order);
 ---
 
 <section id="insights" class="bg-paper-alt border-b border-ink py-20 md:py-30">
@@ -30,14 +28,14 @@ const posts = (await getCollection("insights")).sort(
                 style={`background-image: repeating-linear-gradient(${45 + i * 30}deg, rgba(10,10,10,0.12) 0 1px, transparent 1px 14px);`}
               >
                 <div class="absolute top-3 left-3 px-2.5 py-1 bg-accent text-paper font-mono text-[10px] tracking-[0.12em] uppercase">
-                  {p.data.category}
+                  {p.category}
                 </div>
               </div>
               <div class="mt-4 font-mono text-[11px] tracking-[0.12em] text-ink-muted uppercase">
-                {p.data.date} · {p.data.readMinutes} dk okuma
+                {p.date} · {p.readMinutes} dk okuma
               </div>
               <h3 class="text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] mt-2 m-0">
-                {p.data.title}
+                {p.title}
               </h3>
             </a>
           ))

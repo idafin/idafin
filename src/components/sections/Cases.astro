@@ -1,9 +1,7 @@
 ---
-import { getCollection } from "astro:content";
+import casesData from "../../data/cases.json";
 
-const cases = (await getCollection("cases")).sort(
-  (a, b) => a.data.order - b.data.order
-);
+const cases = [...casesData].sort((a, b) => a.order - b.order);
 ---
 
 <section id="cases" class="bg-paper border-b border-ink py-20 md:py-30">
@@ -21,17 +19,17 @@ const cases = (await getCollection("cases")).sort(
               href="#"
               class="grid grid-cols-2 md:grid-cols-[80px_120px_1fr_220px_100px] gap-6 py-8 border-b border-ink items-center text-ink no-underline hover:bg-paper-alt transition-colors px-2"
             >
-              <div class="font-mono text-[11px] tracking-[0.12em] text-ink-muted">{c.data.year}</div>
-              <div class="font-mono text-[11px] tracking-[0.12em] text-ink">{c.data.sector}</div>
+              <div class="font-mono text-[11px] tracking-[0.12em] text-ink-muted">{c.year}</div>
+              <div class="font-mono text-[11px] tracking-[0.12em] text-ink">{c.sector}</div>
               <div class="col-span-2 md:col-span-1 text-[22px] font-semibold tracking-[-0.02em]">
-                {c.data.title}
+                {c.title}
               </div>
               <div>
                 <div class="text-[32px] font-bold tracking-[-0.03em] text-accent leading-none">
-                  {c.data.metric}
+                  {c.metric}
                 </div>
                 <div class="font-mono text-[10px] tracking-[0.12em] text-ink-muted mt-1 uppercase">
-                  {c.data.metricLabel}
+                  {c.metricLabel}
                 </div>
               </div>
               <div class="text-sm font-semibold text-right hidden md:block">Oku →</div>

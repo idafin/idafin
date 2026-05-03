@@ -85,19 +85,15 @@ idafin/
 │   │       ├── Contact.astro
 │   │       └── Footer.astro
 │   │
-│   ├── data/                   ← Singleton içerikler (JSON)
-│   │   ├── site.json           ← marka, nav, iletişim, footer
-│   │   ├── hero.json
-│   │   ├── manifesto.json
-│   │   ├── about.json
-│   │   └── contact.json
-│   │
-│   ├── content/                ← Çoklu kayıtlar (Astro Content Collections)
-│   │   ├── services/*.md
-│   │   ├── cases/*.md
-│   │   └── insights/*.md
-│   │
-│   └── content.config.ts       ← Koleksiyon Zod şemaları
+│   └── data/                   ← Tüm içerikler (JSON)
+│       ├── site.json           ← marka, nav, iletişim, footer
+│       ├── hero.json
+│       ├── manifesto.json
+│       ├── about.json
+│       ├── contact.json
+│       ├── services.json       ← hizmet kartları (dizi)
+│       ├── cases.json          ← vaka çalışmaları (dizi)
+│       └── insights.json       ← yazılar (dizi)
 │
 ├── astro.config.mjs            ← Tailwind Vite plugin
 ├── tsconfig.json
@@ -115,9 +111,9 @@ idafin/
 | Hakkımızda | `src/data/about.json` |
 | İletişim bölümü başlığı | `src/data/contact.json` |
 | Manifesto + istatistikler | `src/data/manifesto.json` |
-| Hizmet kartları | `src/content/services/*.md` |
-| Vaka çalışmaları | `src/content/cases/*.md` |
-| Yazılar | `src/content/insights/*.md` |
+| Hizmet kartları | `src/data/services.json` |
+| Vaka çalışmaları | `src/data/cases.json` |
+| Yazılar | `src/data/insights.json` |
 
 ---
 

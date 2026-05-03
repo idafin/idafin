@@ -1,0 +1,39 @@
+[
+  {
+    "order": 1,
+    "number": "01",
+    "title": "Finansal Danışmanlık",
+    "description": "İşletmelerin büyümesini destekleyen uçtan uca finansal danışmanlık.",
+    "bullets": [
+      "Finansal yapılandırma",
+      "Kredi yönetimi",
+      "Yatırım & halka arz süreçleri",
+      "Franchise & leasing danışmanlığı",
+      "Yurtiçi & yurtdışı fizibilite analizleri"
+    ]
+  },
+  {
+    "order": 2,
+    "number": "02",
+    "title": "Yazılım & Dijital",
+    "description": "Finansal kuruluşlara özel yazılım ve teknoloji destekli analiz araçları.",
+    "bullets": [
+      "Bilgisayar programları geliştirme",
+      "Finansal kuruluşlara özel yazılım",
+      "Teknoloji destekli finansal analiz araçları",
+      "İş süreçlerini güçlendirme"
+    ]
+  },
+  {
+    "order": 3,
+    "number": "03",
+    "title": "İşletme & Organizasyon",
+    "description": "Sürdürülebilir ve uzun vadeli kurumsal çözümler.",
+    "bullets": [
+      "Sürdürülebilir çözümler",
+      "Uzun vadeli stratejiler",
+      "Değer yaratma odaklı yaklaşım",
+      "Eylem planları"
+    ]
+  }
+]
