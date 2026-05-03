@@ -1,6 +1,6 @@
 # idafin
 
-idafin kurumsal sitesi — **Astro 6 + Tailwind v4 + Decap CMS** ile inşa edilmiş, statik tek sayfalık landing.
+idafin kurumsal sitesi — **Astro 6 + Tailwind v4** ile inşa edilmiş, statik tek sayfalık landing.
 
 ---
 
@@ -26,33 +26,11 @@ npm install
 
 ## Geliştirme
 
-### 1. Sadece site (içeriği elle düzenle)
-
 ```bash
 npm run dev
 ```
 
 → http://localhost:4321 adresinde açılır. HMR aktif — `src/` altındaki her değişiklik anında yansır.
-
-### 2. Site + CMS (içeriği `/admin` üzerinden düzenle)
-
-İki ayrı terminale ihtiyacın var:
-
-```bash
-# terminal 1 — Astro dev server
-npm run dev
-
-# terminal 2 — Decap CMS local backend (dosyaya yazabilmek için)
-npm run cms:proxy
-```
-
-Sonra:
-- Site: http://localhost:4321
-- CMS: http://localhost:4321/admin
-
-CMS'ten kaydet'e bastığında ilgili JSON / Markdown dosyası diske yazılır, Astro otomatik reload eder.
-
-> **Not:** `public/admin/config.yml` içinde `local_backend: true` aktif. Üretimde bunu kapatıp GitHub veya Netlify Identity / git-gateway backend'ini etkinleştirmen gerekir.
 
 ---
 
@@ -70,7 +48,6 @@ npm run preview    # dist'i lokal sunucuda dener
 | Komut | Açıklama |
 |---|---|
 | `npm run dev` | Astro dev server (port 4321) |
-| `npm run cms:proxy` | Decap CMS local backend proxy (geliştirme için) |
 | `npm run build` | Statik build → `dist/` |
 | `npm run preview` | Build çıktısını lokal sunucuda dener |
 | `npm run astro -- ...` | Astro CLI'sine doğrudan komut |
@@ -82,10 +59,8 @@ npm run preview    # dist'i lokal sunucuda dener
 ```
 idafin/
 ├── public/
-│   ├── admin/                  ← Decap CMS arayüzü (/admin)
-│   │   ├── index.html          ← CMS script loader
-│   │   └── config.yml          ← Koleksiyon tanımları (TR etiketler)
-│   └── uploads/                ← Görseller (logo, hero, CMS yüklemeleri)
+│   ├── favicon.svg
+│   └── uploads/                ← Görseller (logo, hero, vb.)
 │
 ├── src/
 │   ├── pages/
@@ -133,10 +108,6 @@ idafin/
 
 ## İçerik düzenleme
 
-İki yöntem var; ikisi de eşdeğer (CMS sadece dosyaları yazar).
-
-### A) Doğrudan dosya düzenle
-
 | İçerik | Dosya |
 |---|---|
 | Marka, menü, iletişim, footer | `src/data/site.json` |
@@ -147,10 +118,6 @@ idafin/
 | Hizmet kartları | `src/content/services/*.md` |
 | Vaka çalışmaları | `src/content/cases/*.md` |
 | Yazılar | `src/content/insights/*.md` |
-
-### B) `/admin` üzerinden CMS
-
-`npm run cms:proxy` çalışırken http://localhost:4321/admin'e git. Tüm singleton'lar **Site Ayarları** altında, listeli içerikler kendi koleksiyonlarında.
 
 ---
 
@@ -196,20 +163,12 @@ npm run build
 # dist/ klasörünü deploy et
 ```
 
-### CMS production backend
-
-`public/admin/config.yml` içindeki `local_backend: true` satırını kaldır ve uygun backend'i bağla:
-
-- **GitHub** (OAuth proxy gerekir): https://decapcms.org/docs/github-backend/
-- **Netlify Identity + git-gateway** (Netlify deploy ediyorsan en kolay): https://decapcms.org/docs/git-gateway-backend/
-
 ---
 
 ## Stack özet
 
 - **Astro 6** — statik site generator, `output: "static"`
-- **Tailwind CSS v4** — `@theme` ile token yönetimi (PostCSS değil, Vite plugin)
-- **Decap CMS 3** — git tabanlı headless CMS
+- **Tailwind CSS v4** — `@theme` ile token yönetimi (Vite plugin)
 - **TypeScript** strict mode
 - **Google Fonts** — DM Sans + JetBrains Mono (preconnect ile)
 
