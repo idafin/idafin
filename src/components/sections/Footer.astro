@@ -39,11 +39,14 @@ const f = site.footer;
       >
     </div>
     <div
-      class="col-span-12 border-t border-paper/15 mt-16 pt-6 grid grid-cols-1 md:grid-cols-3 font-mono text-[10px] tracking-[0.18em] uppercase text-paper/50 gap-y-2"
+      class="col-span-12 border-t border-paper/15 mt-16 pt-6 grid grid-cols-1 md:grid-cols-3 font-mono text-[10px] tracking-[0.18em] uppercase text-paper/50 gap-y-2 items-center"
     >
       <span>{f.legal}</span>
       <span class="md:text-center">{f.certifications}</span>
-      <span class="md:text-right">{f.mark}</span>
+      <div class="md:text-right flex md:justify-end gap-4">
+        <a href="/gizlilik" class="text-paper/70 no-underline hover:text-accent transition-colors">Gizlilik</a>
+        <a href="/kvkk" class="text-paper/70 no-underline hover:text-accent transition-colors">KVKK</a>
+      </div>
     </div>
   </div>
 </footer>

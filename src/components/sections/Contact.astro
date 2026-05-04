@@ -94,9 +94,7 @@ const rows: [string, string][] = [
       const label = btn.querySelector(".label") as HTMLElement;
       btn.disabled = true;
       label.textContent = "Gönderiliyor…";
-      const data = Object.fromEntries(new FormData(form).entries());
-      console.log("contact form:", data);
-      // TODO: SMTP/SendGrid/Postmark entegrasyonu için bu noktada fetch et.
+      // TODO: SMTP/SendGrid/Resend entegrasyonu için bu noktada fetch et.
       await new Promise((r) => setTimeout(r, 400));
       label.textContent = "✓ Talebiniz alındı";
     });
