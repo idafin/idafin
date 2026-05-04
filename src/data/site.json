@@ -2,11 +2,11 @@
   "brand": "idafin",
   "establishedLabel": "EST.2024",
   "nav": [
-    { "n": "01", "label": "Hizmetler", "href": "#services" },
-    { "n": "02", "label": "Hakkımızda", "href": "#about" },
-    { "n": "03", "label": "İletişim", "href": "#contact" }
+    { "n": "01", "label": "Hizmetler", "href": "/#services" },
+    { "n": "02", "label": "Hakkımızda", "href": "/#about" },
+    { "n": "03", "label": "İletişim", "href": "/#contact" }
   ],
-  "ctaPrimary": { "label": "Görüşme Planla →", "href": "#contact" },
+  "ctaPrimary": { "label": "Görüşme Planla →", "href": "/#contact" },
   "contact": {
     "email": "iletisim@idafin.com",
     "address": "Hacı İlbey, Anafartalar Cd. 48/2, 10010 Altıeylül/Balıkesir"
@@ -17,15 +17,15 @@
       {
         "title": "Hizmetler",
         "links": [
-          { "label": "Finansal Danışmanlık", "href": "#services" },
-          { "label": "Yazılım & Dijital", "href": "#services" },
-          { "label": "Süreç & Org.", "href": "#services" }
+          { "label": "Finansal Danışmanlık", "href": "/#services" },
+          { "label": "Yazılım & Dijital", "href": "/#services" },
+          { "label": "Süreç & Org.", "href": "/#services" }
         ]
       },
       {
         "title": "Şirket",
         "links": [
-          { "label": "Hakkımızda", "href": "#about" },
+          { "label": "Hakkımızda", "href": "/#about" },
           { "label": "Ekip", "href": "#" },
           { "label": "Kariyer", "href": "#" }
         ]
@@ -34,7 +34,7 @@
         "title": "İletişim",
         "links": [
           { "label": "iletisim@idafin.com", "href": "mailto:iletisim@idafin.com" },
-          { "label": "Hacı İlbey, Anafartalar Cd. 48/2, Altıeylül/Balıkesir", "href": "#contact" }
+          { "label": "Hacı İlbey, Anafartalar Cd. 48/2, Altıeylül/Balıkesir", "href": "/#contact" }
         ]
       }
     ],
