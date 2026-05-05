@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/sections/Nav.astro";
+import Footer from "../components/sections/Footer.astro";
+---
+
+<Layout
+  title="404 — Sayfa bulunamadı · idafin"
+  description="Aradığınız sayfa bulunamadı."
+>
+  <Nav />
+  <main class="bg-paper border-b border-ink py-20 md:py-30">
+    <div class="container-site grid-12 gap-y-10">
+      <div class="col-span-12 md:col-span-2">
+        <div class="text-mono-cap text-ink-muted">—</div>
+        <div class="mt-3 text-mono-cap text-ink">HATA</div>
+      </div>
+      <div class="col-span-12 md:col-span-10">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="inline-block w-9 h-2 bg-accent" aria-hidden="true"></span>
+          <span class="text-mono-cap text-ink">CODE / 404 — NOT FOUND</span>
+        </div>
+        <h1 class="text-mega text-ink m-0">
+          Sayfa<br />
+          <span class="text-accent">bulunamadı.</span>
+        </h1>
+        <p class="text-[18px] leading-[1.55] text-ink-soft max-w-[560px] mt-12">
+          Aradığınız sayfa taşınmış, kaldırılmış veya hiç var olmamış olabilir.
+          Aşağıdaki bağlantılardan ana sayfaya dönebilir veya bir bölüme geçebilirsiniz.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-10">
+          <a
+            href="/"
+            class="px-5 py-4 bg-accent text-paper no-underline text-[15px] font-semibold inline-flex items-center gap-3 hover:opacity-90 transition-opacity"
+          >
+            <span>Ana sayfaya dön</span><span>→</span>
+          </a>
+          <a
+            href="/#services"
+            class="px-5 py-4 bg-paper text-ink border border-ink no-underline text-[15px] font-semibold inline-flex items-center gap-3 hover:bg-ink hover:text-paper transition-colors"
+          >
+            <span>Hizmetlere git</span><span>↓</span>
+          </a>
+          <a
+            href="/#contact"
+            class="px-5 py-4 bg-paper text-ink border border-ink no-underline text-[15px] font-semibold inline-flex items-center gap-3 hover:bg-ink hover:text-paper transition-colors"
+          >
+            <span>İletişim</span><span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
